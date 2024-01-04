@@ -1,0 +1,7 @@
+{
+  "name": "Orbisator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
