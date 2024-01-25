@@ -139,6 +139,15 @@ export class HomePage {
   }
 
   /**
+   * Get percent from current value.
+   *
+   * @return {void}
+   */
+  percent() {
+    this.currentValue = (Number(this.currentValue) / 100).toString();
+  }
+
+  /**
    * Sets the currentValue to the tmpValue and clears the tmpValue.
    * If tmpAction is 'plus', calls the 'plus' method.
    *

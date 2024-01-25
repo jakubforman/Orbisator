@@ -1,77 +1,85 @@
 <ion-content [fullscreen]="true">
-  <div class="ion-padding">
-    <ion-input type="text"
-               class="ion-text-right"
-               label=""
-               [ngModel]="currentValue"></ion-input>
+  <div slot="fixed">
+    <div class="ion-padding">
+      <!-- TODO: přidat knihovnu pro maskování -->
+      <ion-input type="text"
+                 class="ion-text-right"
+                 readonly
+                 label=""
+                 [ngModel]="currentValue"></ion-input>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="medium" (click)="clear()">AC</ion-button>
+        </ion-col>
+        <ion-col>
+          <!-- TODO: přidat vlastní ikonu -->
+          <ion-button expand="block" shape="round" color="medium" (click)="toggleSign()">+/-</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="medium" (click)="percent()">%</ion-button>
+        </ion-col>
+        <ion-col>
+          <!-- TODO: přidat vlastní ikonu -->
+          <ion-button expand="block" shape="round" color="warning" (click)="divide()">/</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(7)">7</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(8)">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(9)">9</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="warning" (click)="multiply()">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(4)">4</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(5)">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(6)">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="warning" (click)="minus()">-</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(1)">1</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(2)">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" (click)="add(3)">3</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="warning" (click)="plus()">+</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" shape="round" (click)="add(0)">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round">,</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="warning" (click)="equal()">=</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-button color="medium" (click)="clear()">AC</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="medium" (click)="toggleSign()">+/-</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="medium">%</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="warning" (click)="divide()">/</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="add(7)">7</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(8)">8</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(9)">9</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="warning" (click)="multiply()">x</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="add(4)">4</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(5)">5</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(6)">6</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="warning" (click)="minus()">-</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button (click)="add(1)">1</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(2)">2</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button (click)="add(3)">3</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="warning" (click)="plus()">+</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button (click)="add(0)">0</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button>,</ion-button>
-      </ion-col>
-      <ion-col>
-        <ion-button color="warning" (click)="equal()">=</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
