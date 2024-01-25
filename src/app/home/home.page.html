@@ -17,7 +17,7 @@
         <ion-button color="medium">%</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="warning">/</ion-button>
+        <ion-button color="warning" (click)="divide()">/</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -31,7 +31,7 @@
         <ion-button (click)="add(9)">9</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="warning">x</ion-button>
+        <ion-button color="warning" (click)="multiply()">x</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -45,7 +45,7 @@
         <ion-button (click)="add(6)">6</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="warning">-</ion-button>
+        <ion-button color="warning" (click)="minus()">-</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>

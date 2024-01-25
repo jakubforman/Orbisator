@@ -82,14 +82,82 @@ export class HomePage {
   }
 
   /**
+   * Subtract the current value to the temporary value and updates the current value.
+   *
+   * @return {void}
+   */
+  minus() {
+    this.tmpAction = 'minus';
+
+    if (this.tmpValue) {
+      this.tmpValue =
+        (Number(this.tmpValue) - Number(this.currentValue)).toString();
+
+      this.currentValue = this.tmpValue;
+    } else {
+      this.tmpValue = this.currentValue;
+    }
+    this.currentValue = "0";
+  }
+
+  /**
+   * Divide the current value to the temporary value and updates the current value.
+   *
+   * @return {void}
+   */
+  divide() {
+    this.tmpAction = 'divide';
+
+    if (this.tmpValue) {
+      this.tmpValue =
+        (Number(this.tmpValue) / Number(this.currentValue)).toString();
+
+      this.currentValue = this.tmpValue;
+    } else {
+      this.tmpValue = this.currentValue;
+    }
+    this.currentValue = "0";
+  }
+
+  /**
+   * Multiply the current value to the temporary value and updates the current value.
+   *
+   * @return {void}
+   */
+  multiply() {
+    this.tmpAction = 'multiply';
+
+    if (this.tmpValue) {
+      this.tmpValue =
+        (Number(this.tmpValue) * Number(this.currentValue)).toString();
+
+      this.currentValue = this.tmpValue;
+    } else {
+      this.tmpValue = this.currentValue;
+    }
+    this.currentValue = "0";
+  }
+
+  /**
    * Sets the currentValue to the tmpValue and clears the tmpValue.
    * If tmpAction is 'plus', calls the 'plus' method.
    *
    * @returns {void} - No return value.
    */
   equal() {
-    if (this.tmpAction === 'plus') {
-      this.plus();
+    switch (this.tmpAction) {
+      case 'plus':
+        this.plus();
+        break;
+      case 'minus':
+        this.minus();
+        break;
+      case 'multiply':
+        this.multiply();
+        break;
+      case 'divide':
+        this.divide();
+        break;
     }
 
     this.currentValue = this.tmpValue;
